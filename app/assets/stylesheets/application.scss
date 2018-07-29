@@ -1,0 +1,20 @@
+@import "bootstrap";
+
+.masthead{
+	height: 500px;
+	background-image: url(../assets/map.png);
+	background-size: 100%;
+	backdrop-filter: grayscale(0.5);
+}
+
+.map-button{
+	position: absolute;
+	left: 1%;
+	top: 10px;
+}
+
+.map-button:nth-child(2){
+	position: absolute;
+	left: 6%;
+	top: 10px;
+}
