@@ -5,10 +5,6 @@ class SpotsController < ApplicationController
 		@spots = Spot.all.order('created_at DESC')
 	end
 
-	def address
-  		[street, number, city, state, country].compact.join(', ')
-	end
-
 	def new
 		@spot = Spot.new
 	end
