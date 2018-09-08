@@ -2,11 +2,37 @@ class SpotsController < ApplicationController
 	before_action :find_spot, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@spots = Spot.all.order('created_at DESC')
 	end
 
-	def new
+	def map
 		@spot = Spot.new
+		@spots = Spot.all
+
+		@geojson = Array.new
+
+        @spots.each do |spot|
+          @geojson << {
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates: [spot.longitude, spot.latitude]
+            },
+            properties: {
+              state: spot.state,
+              address: spot.address,
+              :'marker-color' => '#00607d',
+              :'marker-symbol' => 'circle',
+              :'marker-size' => 'medium'
+            }
+          }
+        end
+
+        respond_to do |format|
+          format.html
+          format.json { render json: @geojson }  # respond with the created JSON object
+        end
+
+
 	end
 
 	def create

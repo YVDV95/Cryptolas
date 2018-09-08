@@ -18,3 +18,24 @@
 	left: 6%;
 	top: 10px;
 }
+
+.form-inline .form-control{
+	width: 100% !important;
+}
+
+.form-inline{
+	display: block!important;
+}
+
+.marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-marker{
+	background-color: blue!important;
+}
