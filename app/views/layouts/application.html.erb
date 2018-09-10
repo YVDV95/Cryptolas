@@ -8,6 +8,8 @@
     	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+        <script src="/assets/jquery.geocomplete.js"></script> 
 
 	</head>
 
@@ -17,6 +19,6 @@
 
     <%= yield %>
 
-    <%= render 'application/footer' unless @disable_nav %>
 	</body>
 </html>
+

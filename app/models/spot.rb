@@ -9,5 +9,9 @@ class Spot < ApplicationRecord
 	def address_changed?
 		street_changed? || number_changed? || city_changed? || state_changed? || country_changed?
 	end
+
+	def latlong
+		[longitude, latitude].compact.join(', ')
+	end
 	
 end

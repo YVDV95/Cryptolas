@@ -52,13 +52,17 @@
 <script>
   
 $(function() {
-      mapboxgl.accessToken = 'pk.eyJ1IjoianJvY2tldGxhYiIsImEiOiJjajZuNnh5dm4wNTgyMndvMXNqY3lydjI4In0.gHVskGK1QuUoxm8sMwugWQ';
-      var map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/jrocketlab/cjdaqnwhbb3e52sqwblieddk1',
-          center: [-96, 37.8],
-          zoom: 3
-      });
+  mapboxgl.accessToken = 'pk.eyJ1IjoieW9yaWNrdmFuZGVydmlzIiwiYSI6ImNqazN4bmpoeTE0Y2Izd28yZXI0Ym9kb24ifQ.MHqgRPF-2NjKPI2d9z91yg';
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [4.2955402,52.086832],
+      zoom: 4,
+  });
+
+  map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+  }));
 
       map.on('load', function() {
 

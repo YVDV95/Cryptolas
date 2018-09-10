@@ -28,14 +28,13 @@
 }
 
 .marker {
-  background-image: url('mapbox-icon.png');
   background-size: cover;
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .mapboxgl-marker{
-	background-color: blue!important;
+	background-color: orange!important;
 }
