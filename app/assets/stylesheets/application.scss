@@ -8,15 +8,14 @@
 }
 
 .map-button{
-	position: absolute;
-	left: 1%;
-	top: 10px;
+	position: sticky;
+	margin-top: -70px;
+	margin-left: 5px;
 }
 
 .map-button:nth-child(2){
-	position: absolute;
-	left: 6%;
-	top: 10px;
+	position: sticky;
+	margin-left: 5px;
 }
 
 .form-inline .form-control{
@@ -28,13 +27,27 @@
 }
 
 .marker {
-  background-size: cover;
+  border-radius: 50% 50% 50% 0;
+  border: 4px solid #fff;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.marker::after {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
 }
 
 .mapboxgl-marker{
 	background-color: orange!important;
+}
+
+.pac-container {
+    /* put Google geocomplete list on top of Bootstrap modal */
+    z-index: 9999;
 }

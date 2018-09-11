@@ -12,6 +12,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'geocoder', '~> 1.4', '>= 1.4.9'
+gem 'pry-rails', :group => :development
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

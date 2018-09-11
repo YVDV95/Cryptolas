@@ -1,4 +1,6 @@
-<input id="geocomplete" type="text" placeholder="Type in an address" autocomplete="off">
+
+<input id="geocomplete" type="text" placeholder="Search places.." autocomplete="off" class="form-control"><br>
+<p>Press enter after your search to auto-fill the form</p>
 <div class="auto-form">
 	<%= simple_form_for(@spot, html: { class: 'form-inline' }) do |f| %>
 		<%= f.input :street, input_html: { id: 'route' }, required: true %>
@@ -6,16 +8,14 @@
 		<%= f.input :city, input_html: { id: 'locality' }, required: true %>
 		<%= f.input :state, input_html: { id: 'administrative_area_level_1' }, required: true %>
 		<%= f.input :country, input_html: { id: 'country' }, required: true  %>
-		<%= f.button :submit %>
+		<br>
+		<%= f.button :submit, class: 'btn btn-primary' %>
 	<% end -%>
 </div>
 
 <script>
-
-$("#geocomplete").geocomplete({
-  details: ".auto-form",
-  detailsAttribute: "id"
-});
-
+	$("#geocomplete").geocomplete({
+	  details: ".auto-form",
+	  detailsAttribute: "id"
+	});
 </script>
-

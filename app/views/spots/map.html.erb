@@ -6,6 +6,8 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; height: 100vh; }
@@ -13,8 +15,6 @@
 </head>
 <body>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
 
         <div id='map'></div>
         
@@ -23,7 +23,7 @@
             <%= link_to "Back", root_path, class: 'btn btn-primary map-button' %>
             
             <!-- Button trigger modal -->
-            <button type="button" style="position: absolute;" class="btn btn-primary map-button" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-primary map-button" data-toggle="modal" data-target="#exampleModal">
               Add Spot
             </button>
         </div>
@@ -48,9 +48,7 @@
                 </div>
               </div>
             </div>
-
 <script>
-  
 $(function() {
   mapboxgl.accessToken = 'pk.eyJ1IjoieW9yaWNrdmFuZGVydmlzIiwiYSI6ImNqazN4bmpoeTE0Y2Izd28yZXI0Ym9kb24ifQ.MHqgRPF-2NjKPI2d9z91yg';
   var map = new mapboxgl.Map({
@@ -59,7 +57,7 @@ $(function() {
       center: [4.2955402,52.086832],
       zoom: 4,
   });
-
+  
   map.addControl(new MapboxGeocoder({
       accessToken: mapboxgl.accessToken
   }));
@@ -94,8 +92,6 @@ $(function() {
               alert("Could not load the events");
             }
         });
-
-
       });
     });
 </script>
